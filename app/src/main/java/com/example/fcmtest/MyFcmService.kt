@@ -64,9 +64,9 @@ class MyFcmService : FirebaseMessagingService() {
             return
         }
 
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, MyReceiver::class.java)
 
-        val pendingIntent = PendingIntent.getActivity(
+        val pendingIntent = PendingIntent.getBroadcast(
             this, 0 /* Request code */, intent,
             PendingIntent.FLAG_ONE_SHOT
         )
